@@ -1,0 +1,21 @@
+subject,body,label
+"Project update meeting on Thursday","Hi team, let's meet this Thursday at 2 PM to review the quarterly roadmap and discuss deliverables.",0
+"Weekly team sync notes","Thanks everyone for attending today's sync. Attached in Jira are the action items assigned to each team member.",0
+"Expense report approved","Your travel expense report for the conference in Austin has been reviewed and approved by finance.",0
+"Lunch tomorrow?","Hey Alex, are you free to grab lunch around 12:30 tomorrow at the cafeteria downstairs?",0
+"Draft design documentation","Please review the attached architecture diagram for the new microservice before our sprint planning.",0
+"Customer feedback summary","Here is the compiled customer feedback from Q3 survey. Overall satisfaction remains above 92%.",0
+"Office holiday schedule announcement","Please note that the corporate offices will be closed on Monday for the upcoming national holiday.",0
+"Code review request: PR #142","Could you take a quick look at the bug fix in PR #142 when you get a chance? Thanks!",0
+"Welcome to the team!","Welcome aboard! We are thrilled to have you join our engineering team. Let's schedule an intro call.",0
+"IT Maintenance Window Notification","Routine network maintenance is scheduled for Saturday 2 AM UTC. No expected downtime for mail services.",0
+"URGENT: Your bank account has been suspended!","Your account has been locked due to suspicious activity. Verify your identity immediately at http://192.168.1.100/verify-login or account will be closed in 24 hours.",1
+"Security Alert: Immediate password reset required","We detected unauthorized access to your mailbox. Please click http://secure-login.update-credential-security.com to reset your corporate password immediately.",1
+"Claim your $5,000 lottery gift card prize now!","Congratulations! You have won a $5000 Amazon gift card. Enter your social security number and shipping address here to claim your reward.",1
+"Action Required: Unpaid invoice overdue penalty","Your payroll service is overdue. Wire money immediately to account #49204 to avoid legal action and penalty charges.",1
+"HR Dept: Verify your direct deposit details immediately","All employees must verify their direct deposit bank credentials today to avoid payroll cancellation: http://hr-portal-direct-deposit.xyz/login",1
+"Account Deactivation Notice - 24 Hours Left","Your Microsoft Office 365 access is scheduled for termination. Retain access now: http://login-microsoft365-verify.ru/auth",1
+"Suspicious purchase of $1,499.00 on your card","If you did not authorize this order, call immediately or click http://chase-security-fraud-alert.cc to cancel transaction and input your debit card PIN.",1
+"Urgent Tax Refund Notice: IRS Notification","You have a pending federal tax refund of $820.00. Provide your banking PIN and account number to transfer funds right now.",1
+"Dropbox Shared Document: Urgent Sign Required","CEO has shared a private financial document with you. Log in with your corporate credentials to view: http://dropbox-shared-viewer.biz/auth",1
+"Critical IT Security Patch - Enter Credentials","All staff must submit their current domain password to receive the emergency security update: http://10.0.0.50/install",1

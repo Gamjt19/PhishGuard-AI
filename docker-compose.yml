@@ -1,0 +1,15 @@
+services:
+  phishguard-ai:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: phishguard-ai-service
+    ports:
+      # Bound strictly to localhost loopback interface (security requirement: avoid public LAN exposure)
+      - "127.0.0.1:8501:8501"
+    environment:
+      - PYTHONUNBUFFERED=1
+    volumes:
+      - ./models:/app/models
+      - ./logs:/app/logs
+    restart: unless-stopped

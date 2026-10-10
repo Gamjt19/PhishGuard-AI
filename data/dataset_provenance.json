@@ -1,0 +1,21 @@
+{
+  "dataset_name": "Shahriar University Phishing & Enron Legitimate Corpus",
+  "primary_paper": "Shahriar, S., Mukherjee, A., & Gnawali, O. (2022). Improving Phishing Detection Via Psychological Trait Scoring. IADIS MCCSIS 2022.",
+  "source_url": "https://raw.githubusercontent.com/sadat1971/Phishing_Email/main/Data/curated_set.csv",
+  "license": "Open Academic Research / CC-BY Compatible",
+  "description": "Curated benchmark combining genuine phishing emails collected from university security reports and legitimate enterprise emails from the Enron corpus. Strictly separates phishing from legitimate (NOT generic spam/commercial marketing).",
+  "label_definition": {
+    "0": "Legitimate email (Enron Corpus)",
+    "1": "Phishing email (University Security Archives)"
+  },
+  "original_columns": [
+    "text",
+    "source",
+    "is_phishing"
+  ],
+  "total_rows": 325,
+  "class_distribution": {
+    "legitimate_0": 162,
+    "phishing_1": 163
+  }
+}

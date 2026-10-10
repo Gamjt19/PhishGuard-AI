@@ -1,0 +1,289 @@
+{
+  "model_name": "PhishGuard-LR-TFIDF",
+  "training_timestamp_utc": "2026-10-10T15:42:18.419003+00:00",
+  "random_seed": 42,
+  "pipeline_architecture": {
+    "vectorizer": "TfidfVectorizer(max_features=5000, ngram_range=(1,2), stop_words='english', sublinear_tf=True)",
+    "classifier": "LogisticRegression(C=1.0, max_iter=1000, class_weight='balanced', solver='lbfgs')"
+  },
+  "dataset_split": {
+    "source_path": "data/phishing_dataset.csv",
+    "initial_rows": 325,
+    "cleaned_rows": 317,
+    "dropped_empty_rows": 0,
+    "dropped_exact_duplicates": 2,
+    "dropped_near_duplicates": 6,
+    "near_duplicate_clusters": [
+      {
+        "canonical_index": 51,
+        "dropped_duplicate_index": 155,
+        "similarity": 1.0,
+        "canonical_preview": "This email is being sent to you because of violation security breach\nthat was detected by our servers. Our server detect",
+        "dropped_preview": "This email is being sent to you because of violation security breach\nthat was detected by our servers. Our server detect"
+      },
+      {
+        "canonical_index": 51,
+        "dropped_duplicate_index": 184,
+        "similarity": 0.9197,
+        "canonical_preview": "This email is being sent to you because of violation security breach\nthat was detected by our servers. Our server detect",
+        "dropped_preview": "This email is being sent to you because of violation security breach\nthat was detected by our servers. Our server detect"
+      },
+      {
+        "canonical_index": 58,
+        "dropped_duplicate_index": 146,
+        "similarity": 0.901,
+        "canonical_preview": "PART-TIME JOB OFFER!!\nCollege Central Network: Job Referral\nStilt Connection International Relief continues to help alle",
+        "dropped_preview": "PART-TIME JOB OFFER!!\nCollege Central Network: Job Referral\nStilt Connection International Relief continues to help alle"
+      },
+      {
+        "canonical_index": 85,
+        "dropped_duplicate_index": 283,
+        "similarity": 0.95,
+        "canonical_preview": "The Stanford Canvas team posted five new messages on your Canvas dashboard that requires immediate attention.\nLogin to C",
+        "dropped_preview": "Canvas\n\nThe Stanford Canvas team posted five new messages on your Canvas dashboard that requires immediate attention.\n\nL"
+      },
+      {
+        "canonical_index": 87,
+        "dropped_duplicate_index": 183,
+        "similarity": 0.9388,
+        "canonical_preview": "Your Web mail account Certificate is about to expire, not to interrupt your email delivery configuration and account POP",
+        "dropped_preview": "Your Web mail account Certificate is about to expire, not to interrupt your email delivery configuration and account POP"
+      },
+      {
+        "canonical_index": 116,
+        "dropped_duplicate_index": 280,
+        "similarity": 0.9697,
+        "canonical_preview": "We noticed that your mailbox has exceeded the allocated storage limit\nas set by our administrator, you will not be able",
+        "dropped_preview": "Attn: Lehigh University web-mail User,\nWe noticed that your mailbox has exceeded the allocated storage limit\nas set by o"
+      }
+    ],
+    "train_size": 253,
+    "test_size": 64,
+    "train_class_distribution": {
+      "legitimate_0": 128,
+      "phishing_1": 125
+    },
+    "test_class_distribution": {
+      "legitimate_0": 33,
+      "phishing_1": 31
+    },
+    "leakage_analysis": {
+      "exact_leakage_count": 0,
+      "near_duplicate_leakage_count": 0,
+      "sampled_comparisons": 16192,
+      "threshold": 0.8,
+      "method": "word 3-gram Jaccard similarity (150 words prefix)",
+      "leaked_pairs": [],
+      "limitation_note": "Detects lexical n-gram overlap between train and test sets. Semantic rephrasing or shared boilerplate disclaimers may still occur."
+    }
+  },
+  "dataset_provenance": {
+    "dataset_name": "Shahriar University Phishing & Enron Legitimate Corpus",
+    "primary_paper": "Shahriar, S., Mukherjee, A., & Gnawali, O. (2022). Improving Phishing Detection Via Psychological Trait Scoring. IADIS MCCSIS 2022.",
+    "source_url": "https://raw.githubusercontent.com/sadat1971/Phishing_Email/main/Data/curated_set.csv",
+    "license": "Open Academic Research / CC-BY Compatible",
+    "description": "Curated benchmark combining genuine phishing emails collected from university security reports and legitimate enterprise emails from the Enron corpus. Strictly separates phishing from legitimate (NOT generic spam/commercial marketing).",
+    "label_definition": {
+      "0": "Legitimate email (Enron Corpus)",
+      "1": "Phishing email (University Security Archives)"
+    },
+    "original_columns": [
+      "text",
+      "source",
+      "is_phishing"
+    ],
+    "total_rows": 325,
+    "class_distribution": {
+      "legitimate_0": 162,
+      "phishing_1": 163
+    }
+  },
+  "evaluation_metrics": {
+    "accuracy": 0.9844,
+    "precision_phishing": 1.0,
+    "recall_phishing": 0.9677,
+    "f1_phishing": 0.9836,
+    "precision_macro": 0.9853,
+    "recall_macro": 0.9839,
+    "f1_macro": 0.9843,
+    "confusion_matrix": {
+      "true_negatives_legit_correct": 33,
+      "false_positives_legit_as_phish": 0,
+      "false_negatives_phish_missed": 1,
+      "true_positives_phish_caught": 30,
+      "raw_matrix": [
+        [
+          33,
+          0
+        ],
+        [
+          1,
+          30
+        ]
+      ]
+    },
+    "per_class_report": {
+      "Legitimate": {
+        "precision": 0.9705882352941176,
+        "recall": 1.0,
+        "f1-score": 0.9850746268656716,
+        "support": 33.0
+      },
+      "Phishing": {
+        "precision": 1.0,
+        "recall": 0.967741935483871,
+        "f1-score": 0.9836065573770492,
+        "support": 31.0
+      },
+      "accuracy": 0.984375,
+      "macro avg": {
+        "precision": 0.9852941176470589,
+        "recall": 0.9838709677419355,
+        "f1-score": 0.9843405921213604,
+        "support": 64.0
+      },
+      "weighted avg": {
+        "precision": 0.9848345588235294,
+        "recall": 0.984375,
+        "f1-score": 0.9843635307071201,
+        "support": 64.0
+      }
+    }
+  },
+  "explainability": {
+    "top_phishing_indicators_tfidf": [
+      {
+        "feature": "account",
+        "weight": 1.4771
+      },
+      {
+        "feature": "stanford",
+        "weight": 1.3132
+      },
+      {
+        "feature": "university",
+        "weight": 1.1108
+      },
+      {
+        "feature": "lehigh",
+        "weight": 1.0748
+      },
+      {
+        "feature": "email",
+        "weight": 1.0006
+      },
+      {
+        "feature": "click",
+        "weight": 1.0002
+      },
+      {
+        "feature": "edu",
+        "weight": 0.8379
+      },
+      {
+        "feature": "user",
+        "weight": 0.7624
+      },
+      {
+        "feature": "mailbox",
+        "weight": 0.7601
+      },
+      {
+        "feature": "lehigh university",
+        "weight": 0.7592
+      },
+      {
+        "feature": "stanford edu",
+        "weight": 0.7256
+      },
+      {
+        "feature": "dear",
+        "weight": 0.6963
+      },
+      {
+        "feature": "upgrade",
+        "weight": 0.6273
+      },
+      {
+        "feature": "security",
+        "weight": 0.6176
+      },
+      {
+        "feature": "view",
+        "weight": 0.6052
+      }
+    ],
+    "top_legitimate_indicators_tfidf": [
+      {
+        "feature": "enron",
+        "weight": -1.1613
+      },
+      {
+        "feature": "2001",
+        "weight": -0.8086
+      },
+      {
+        "feature": "subject",
+        "weight": -0.7109
+      },
+      {
+        "feature": "vince",
+        "weight": -0.7041
+      },
+      {
+        "feature": "2000",
+        "weight": -0.6724
+      },
+      {
+        "feature": "like",
+        "weight": -0.5954
+      },
+      {
+        "feature": "ect",
+        "weight": -0.562
+      },
+      {
+        "feature": "th",
+        "weight": -0.5518
+      },
+      {
+        "feature": "cc",
+        "weight": -0.5445
+      },
+      {
+        "feature": "gas",
+        "weight": -0.5084
+      },
+      {
+        "feature": "30",
+        "weight": -0.5047
+      },
+      {
+        "feature": "know",
+        "weight": -0.4982
+      },
+      {
+        "feature": "pm",
+        "weight": -0.491
+      },
+      {
+        "feature": "hpl",
+        "weight": -0.4742
+      },
+      {
+        "feature": "let",
+        "weight": -0.473
+      }
+    ]
+  },
+  "limitations_and_ethics": {
+    "calibrated_probabilities": false,
+    "calibration_note": "Logistic regression sigmoid probabilities are uncalibrated and reflect linear score confidence.",
+    "known_limitations": [
+      "Model relies on lexical and structural n-gram patterns in text and cannot verify actual cryptographic email signatures (SPF/DKIM/DMARC).",
+      "Novel zero-day phishing lures that use unfamiliar phrasing may evade bag-of-words classifiers (false negatives).",
+      "Legitimate emails that contain urgent business deadlines or invoice discussions may trigger false alarms (false positives).",
+      "Designed as a decision-support demonstration tool, not an autonomous email gateway."
+    ]
+  }
+}
